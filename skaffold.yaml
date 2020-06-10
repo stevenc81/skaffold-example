@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta4
+kind: Config
+
+build:
+  artifacts:
+  - image: stevenc81/node-example
+
+deploy:
+  helm:
+    releases:
+    - name: node-example
+      chartPath: charts
+      artifactOverrides:
+        image: stevenc81/node-example
